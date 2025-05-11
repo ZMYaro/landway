@@ -1,0 +1,176 @@
+html {
+	--color-background: #ffffff;
+	--color-on-background: #1c1e23;
+	--color-accent: #064a8e; /* BCU logo color */
+	--color-on-accent: #ffffff;
+	--color-on-accent-inactive: #cee0f4;
+	--color-link: #428bca;
+	--color-link-active: #0f4c8c;
+	--color-tab-hover: #0b2f4c;
+	--color-tab-selected-indicator: #a1c6ed;
+	
+	--color-line-dark-orange: #ff6600; /* Powder House Blvd. & Broadway Somer. */
+	--color-line-purple: #650073; /* College Ave. Somerville */
+	--color-line-dark-green: #00782a; /* Fitchburg Cutoff/Alewife Linear Park/Somerville Community Path */
+	--color-line-tan: #cc9900; /* Summer St. Somerville */
+	--color-line-teal: #00cc99; /* Curtis/Holland/Elm/Beacon/Hampshire */
+	--color-line-lime-green: #aaee00; /* Somerville/Webster/Columbie/Sidney/Brookline */
+	--color-line-navy-blue: #003688; /* Kirkland/W. Washington/E. Somerville */
+	--color-line-pink: #ff33cc; /* River/Western/Prospect/E. Washington */
+	--color-line-dark-blue: #003abb; /* Huron/Cedar/Willow */
+	--color-line-brown: #663300; /* Ellery/Trowbridge/Park/Central */
+	--color-line-dark-red: #b00000; /* GrJunct./Vassar/Galileo/McGrath */
+	--color-line-green: #00be12; /* Assembly */
+	--color-line-red: #ee0000; /* N. Mass. Ave./JFK */
+	--color-line-yellow: #f7dd11; /* Cambridge St. */
+	--color-line-indigo: #4800c2; /* Binney/First/Third */
+	--color-line-light-purple: #ab7de2; /* Garden/Broadway Camb. */
+	--color-line-light-orange: #ff9900; /* Brattle/E. Mass. Ave. */
+	--color-line-blue: #006dff; /* Paul Dudley White */
+	--color-line-light-blue: #77aaff; /* Greenway/Minuteman */
+	--color-line-gray: #a0a5a9; /* Minor connections */
+	
+	--max-content-width: 75rem; /* 1200px default */
+	--section-padding: 8px;
+}
+
+body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	background-color: var(--color-background);
+	color: var(color-on-background);
+}
+
+/* -------- General components -------- */
+abbr {
+	/* Disable default dotted underline since this is being used for street names. */
+	text-decoration: none;
+}
+a {
+	color: var(--color-link);
+}
+	a:focus,
+	a:hover {
+		text-decoration: underline;
+	}
+	a:active {
+		color: var(--color-link-active);
+	}
+button {
+	font: inherit;
+	cursor: pointer;
+}
+button[role="tab"] {
+	border: 0 none;
+	border-bottom: 8px solid transparent;
+	padding: 12px 24px 6px;
+	background-color: transparent;
+	color: var(--color-on-accent-inactive);
+}
+	button[role="tab"]:enabled:focus,
+	button[role="tab"]:enabled:hover {
+		background-color: var(--color-tab-hover);
+	}
+	button[role="tab"][aria-selected="true"] {
+		border-bottom-color: var(--color-tab-selected-indicator);
+	}
+	button[role="tab"]:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+.icon {
+	width: calc((8 / 9) * 1em);
+	width: 1lh;
+	height: calc((8 / 9) * 1em);
+	height: 1lh;
+	vertical-align: top;
+}
+.line-name {
+	display: inline-block;
+	margin-block: 0;
+	padding: 0.25em 0.5em;
+	border-radius: 1em;
+}
+
+/* -------- General page layout -------- */
+header,
+footer {
+	width: 100%;
+	margin: 0;
+	background-color: var(--color-accent);
+	color: var(--color-on-accent);
+}
+#page-header {
+	position: sticky;
+	top: 0;
+}
+footer {
+	font-size: 0.8rem;
+	text-align: center;
+	background-color: var(--color-line-gray);
+}
+	footer a {
+		text-decoration: underline;
+		color: inherit;
+	}
+section,
+.header-contents,
+.footer-contents {
+	max-width: var(--max-content-width);
+	margin-inline: auto;
+	padding: var(--section-padding);
+}
+	.header-contents {
+		display: flex;
+		justify-content: space-between;
+	}
+	section > header {
+		display: flex;
+		width: auto;
+		margin: calc(-1 * var(--section-padding));
+		padding: calc(2 * var(--section-padding));
+		align-items: center;
+		gap: 0.5em;
+		font-size: 1.75rem;
+		font-weight: bold;
+	}
+		section > header h2 {
+			margin: 0;
+		}
+.logo {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	line-height: 1;
+}
+	.logo img {
+		width: 3rem;
+		height: 3rem;
+	}
+	.logo h1 {
+		font-size: 1.5rem;
+		
+	}
+		.logo h1 small {
+			font-size: 1.25rem;
+		}
+
+/* -------- Map section -------- */
+
+#map img {
+	max-width: 100%;
+}
+
+
+/* -------- Alerts & projects sections -------- */
+#alerts ul,
+#projects ul {
+	margin-block-start: 0.5rem;
+}
+	#alerts ul {
+		padding-inline-start: 0.25rem;
+		list-style-type: none;
+	}
