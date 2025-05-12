@@ -166,7 +166,7 @@ section#map > header {
 	section#map > header {
 		margin-inline: calc(-1 * var(--section-padding));
 	}
-	#map img[role="tabpanel"] {
+	#map [role="tabpanel"] img {
 		display: block;
 		max-width: 100%;
 		margin-block-start: calc(-1 * var(--section-padding));
