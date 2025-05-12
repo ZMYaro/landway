@@ -121,7 +121,7 @@ section,
 .footer-contents {
 	max-width: var(--max-content-width);
 	margin-inline: auto;
-	padding: var(--section-padding);
+	padding: var(--section-padding) calc(2 * var(--section-padding));
 }
 	.header-contents {
 		display: flex;
@@ -130,7 +130,7 @@ section,
 	section > header {
 		display: flex;
 		width: auto;
-		margin: calc(-1 * var(--section-padding));
+		margin-inline: calc(-2 * var(--section-padding));
 		padding: calc(2 * var(--section-padding));
 		align-items: center;
 		gap: 0.5em;
@@ -159,18 +159,32 @@ section,
 		}
 
 /* -------- Map section -------- */
-
-#map img {
-	max-width: 100%;
+section#map,
+section#map > header {
+	padding-inline: var(--section-padding);
 }
-
+	section#map > header {
+		margin-inline: calc(-1 * var(--section-padding));
+	}
+	#map img[role="tabpanel"] {
+		display: block;
+		max-width: 100%;
+		margin-block-start: calc(-1 * var(--section-padding));
+	}
 
 /* -------- Alerts & projects sections -------- */
 #alerts ul,
 #projects ul {
 	margin-block-start: 0.5rem;
+	line-height: 1.5;
 }
 	#alerts ul {
 		padding-inline-start: 0.25rem;
 		list-style-type: none;
+	}
+		#alerts ul .icon {
+			width: 1em;
+		}
+	#projects ul {
+		padding-inline-start: 1.5rem;
 	}
