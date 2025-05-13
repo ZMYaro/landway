@@ -65,10 +65,15 @@ input[type="checkbox"] {
 	font: inherit;
 	cursor: pointer;
 }
+[role="tablist"] {
+	display: flex;
+	align-items: stretch;
+}
 button[role="tab"] {
+	flex-grow: 1;
 	border: 0 none;
 	border-bottom: 8px solid transparent;
-	padding: 12px 24px 6px;
+	padding: 12px 12px 6px;
 	background-color: transparent;
 	color: var(--color-on-accent-inactive);
 }
@@ -83,6 +88,16 @@ button[role="tab"] {
 		opacity: 0.6;
 		cursor: not-allowed;
 	}
+@media (min-width: 31.25rem) { /* 500px default */
+	button[role="tab"] {
+	}
+}
+@media (min-width: 41rem) { /* 656px default */
+	button[role="tab"] {
+		flex-grow: 0;
+		padding-inline: 24px;
+	}
+}
 .icon {
 	width: calc((8 / 9) * 1em);
 	width: 1lh;
@@ -123,7 +138,7 @@ section,
 .footer-contents {
 	max-width: var(--max-content-width);
 	margin-inline: auto;
-	padding: var(--section-padding) calc(2 * var(--section-padding));
+	padding: calc(0.5 * var(--section-padding)) calc(2 * var(--section-padding));
 }
 	.header-contents {
 		display: flex;
@@ -136,29 +151,57 @@ section,
 		padding: calc(2 * var(--section-padding));
 		align-items: center;
 		gap: 0.5em;
-		font-size: 1.75rem;
+		font-size: 1.25rem;
 		font-weight: bold;
 	}
 		section > header h2 {
 			margin: 0;
+			font-size: 1.25em;
 		}
+@media (min-width: 37.5rem) { /* 600px default */
+	section,
+	.header-contents {
+		padding-block: var(--section-padding);
+	}
+	section > header {
+		font-size: 1.5rem;
+	}
+}
+@media (min-width: 50rem) { /* 800px default */
+	section > header {
+		font-size: 1.75rem;
+	}
+		section > header h2 {
+			font-size: 1.5em;
+		}
+}
 .logo {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
 	line-height: 1;
+	
+	font-size: 2rem;
 }
 	.logo img {
-		width: 3rem;
-		height: 3rem;
+		/* Scales with logo font size. */
+		width: 1em;
+		height: 1em;
 	}
 	.logo h1 {
-		font-size: 1.5rem;
-		
+		/* Combines with .logo's font size increase. */
+		font-size: 0.5em;
 	}
-		.logo h1 small {
-			font-size: 1.25rem;
-		}
+@media (min-width: 37.5rem) { /* 600px default */
+	.logo {
+		font-size: 2.5rem;
+	}
+}
+@media (min-width: 50rem) { /* 800px default */
+	.logo {
+		font-size: 3rem;
+	}
+}
 
 /* -------- Map section -------- */
 section#map,
@@ -167,6 +210,7 @@ section#map > header {
 }
 	section#map > header {
 		margin-inline: calc(-1 * var(--section-padding));
+		padding-block: 0 calc(1 * var(--section-padding));
 	}
 	#map [role="tabpanel"] img {
 		display: block;
@@ -179,6 +223,23 @@ section#map > header {
 	margin-block: var(--section-padding);
 	/* The checkbox at the start looks OK, but the text hanging over the end looks a little wonky. */
 	padding-inline-end: calc(0.5 * var(--section-padding));
+}
+@media (max-width: 31.25rem) { /* 500px default */
+	section#map > header {
+		/* Shrink the tabs below the default in very narrow windows. */
+		font-size: 1rem;
+		padding: 0;
+		gap: 0;
+	}
+	#map [role="tabpanel"] img {
+		margin: 0 calc(-1 * var(--section-padding));
+		max-width: calc(100% + (2 * var(--section-padding)));
+	}
+}
+@media (min-width: 37.5rem) { /* 600px default */
+	section#map > header {
+		padding-block: calc(2 * var(--section-padding));
+	}
 }
 
 /* -------- Alerts & projects sections -------- */
