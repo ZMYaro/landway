@@ -42,6 +42,7 @@ body {
 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	background-color: var(--color-background);
 	color: var(color-on-background);
+	accent-color: var(--color-accent);
 }
 
 /* -------- General components -------- */
@@ -59,7 +60,8 @@ a {
 	a:active {
 		color: var(--color-link-active);
 	}
-button {
+button,
+input[type="checkbox"] {
 	font: inherit;
 	cursor: pointer;
 }
@@ -171,6 +173,13 @@ section#map > header {
 		max-width: 100%;
 		margin-block-start: calc(-1 * var(--section-padding));
 	}
+.toolbar {
+	display: flex;
+	justify-content: space-between;
+	margin-block: var(--section-padding);
+	/* The checkbox at the start looks OK, but the text hanging over the end looks a little wonky. */
+	padding-inline-end: calc(0.5 * var(--section-padding));
+}
 
 /* -------- Alerts & projects sections -------- */
 #alerts ul,

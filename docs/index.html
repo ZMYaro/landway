@@ -3,7 +3,14 @@
 	<head>
 		<title>Greater Boston Area Landway - All-Ages Mobility Network</title>
 		<link rel="stylesheet" type="text/css" href="styles.css" />
-		<script defer src="tabs.js"></script>
+		<script defer src="map_panel.js"></script>
+		<script defer src="image_map_resizer.min.js"></script>
+		
+		<link rel="prefetch" as="image" href="images/maps/landway_map_v12_camberville_current_all.png" />
+		<link rel="prefetch" as="image" href="images/maps/landway_map_v12_camberville_future.png" />
+		<link rel="prefetch" as="image" href="images/maps/landway_map_v12_camberville_current_projects.png" />
+		<link rel="prefetch" as="image" href="images/maps/landway_map_v12_camberville_current_all_projects.png" />
+		<link rel="prefetch" as="image" href="images/maps/landway_map_v12_camberville_future_projects.png" />
 	</head>
 	<body>
 		<header id="page-header">
@@ -21,13 +28,39 @@
 		<br />
 		<section id="map">
 			<header role="tablist">
-				<button role="tab" aria-selected="true" aria-controls="map-current" tabindex="0">Current</button>
-				<button role="tab" aria-selected="false" aria-controls="map-current-all" tabindex="-1" disabled>Current &amp; In Progress</button>
-				<button role="tab" aria-selected="false" aria-controls="map-future" tabindex="-1" disabled>Someday</button>
+				<button role="tab" aria-selected="true" aria-controls="map-panel" tabindex="0" data-map-variant="current">Current</button>
+				<button role="tab" aria-selected="false" aria-controls="map-panel" tabindex="-1" disabled data-map-variant="current_all">Current &amp; In Progress</button>
+				<button role="tab" aria-selected="false" aria-controls="map-panel" tabindex="-1" disabled data-map-variant="future">Someday</button>
 			</header>
-			<a href="images/landway_map_v12_camberville_current.png" target="_blank" id="map-current" role="tabpanel"><img src="images/landway_map_v12_camberville_current.png" alt="The current landway network, missing many connections." /></a>
-			<a href="images/landway_map_v12_camberville_current_all.png" target="_blank" id="map-current-all" role="tabpanel" style="display: none;"><img src="images/landway_map_v12_camberville_current_all.png" alt="The current and in progress landway network, with unprotected marked routes and planned routes." /></a>
-			<a href="images/landway_map_v12_camberville_future.png" target="_blank" id="map-future" role="tabpanel" style="display: none;"><img src="images/landway_map_v12_camberville_future.png" alt="The landway network someday, with missing connections built out." /></a>
+			<div id="map-panel" role="tabpanel">
+				<img usemap="projects" src="images/maps/landway_map_v12_camberville_current.png" alt="The current landway network, missing many connections." />
+				<map name="projects">
+					<area shape="rect" coords="859, 652, 1365,748" alt="West Broadway Reconstruction" href="https://SomervilleMA.gov/WestBroadway" target="_blank" />
+					<area shape="rect" coords="428,1078, 844,1175" alt="Belmont Community Path" href="https://BelmontCommunityPath.com" target="_blank" />
+					<area shape="rect" coords="517,1210, 1034,1307" alt="Rindge Community Connectivity" href="https://CambridgeRedevelopment.org/rindgeconnectivity" target="_blank" />
+					<area shape="rect" coords="1066,1073, 1778,1169" alt="Fitchburg Line Pedestrian &amp; Bicycle Crossing" href="https://CambridgeMA.gov/FitchburgCrossing" target="_blank" />
+					<area shape="rect" coords="748,1442, 1138,1539" alt="Danehy Park Connector" href="https://camb.ma/danehyconnector" target="_blank" />
+					<area shape="rect" coords="1176,1381, 1662,1478" alt="Massachusetts Avenue Partial Construction" href="https://CambridgeMA.gov/MassAvePartialConstruction" target="_blank" />
+					<area shape="rect" coords="1678,1214, 2063,1310" alt="Elm-Beacon Connector" href="https://SomervilleMA.gov/ElmBeacon" target="_blank" />
+					<area shape="rect" coords="2846,1237, 3777,1334" alt="Everett-Somerville Mystic River Bicycle &amp; Pedestrian Bridge" href="https://bit.ly/EverettSomervilleBridge" target="_blank" />
+					<area shape="rect" coords="2904,1544, 3615,1641" alt="Maffa Way/Mystic Avenue Bridge Replacements" href="https://mass.gov/MaffaMystic" target="_blank" />
+					<area shape="rect" coords="2122,1551, 2501,1647" alt="McGrath Boulevard" href="https://mass.gov/mcgrath-boulevard-project" target="_blank" />
+					<area shape="rect" coords="1999,1807, 2561,1904" alt="Cambridge Streets Safety Improvements" href="https://CambridgeMA.gov/CambridgeStSafety" target="_blank" />
+					<area shape="rect" coords="1496,2096, 1995,2193" alt="Broadway Safety Improvement" href="https://CambridgeMA.gov/BroadwaySafety" target="_blank" />
+					<area shape="rect" coords="2608,2069, 2958,2166" alt="Grand Junction Path" href="https://CambridgeMA.gov/GrandJunction" target="_blank" />
+					<area shape="rect" coords="2871,2245, 3583,2342" alt="North Station Draw One" href="https://mbta.com/DrawOne" target="_blank" />
+					<area shape="rect" coords="1624,2481, 2022,2577" alt="River Street Reconstruction" href="https://CambridgeMA.gov/RiverStreet" target="_blank" />
+					<area shape="rect" coords="2195,2501, 2666,2598" alt="Main Street Safety Improvement" href="https://CambridgeMA.gov/MainStSafety" target="_blank" />
+					<area shape="rect" coords="2105,2709, 2606,2805" alt="Vassar Street Safety Improvement" href="https://bit.ly/SouthVassarSafety" target="_blank" />
+				</map>
+				<div class="toolbar">
+					<label>
+						<input type="checkbox" id="show-projects" />
+						Show projects
+					</label>
+					<a href="images/maps/landway_map_v12_camberville_current.png" target="_blank">&hairsp;&#x2922; Full size&hairsp;</a>
+				</div>
+			</div>
 		</section>
 		<section id="alerts">
 			<header>
