@@ -1,4 +1,4 @@
-const MAP_PREFIX = 'images/maps/landway_map_v12_camberville_',
+const MAP_PREFIX = 'images/maps/landway_map_v13_camberville_',
 	MAP_ALT_TEXT = {
 		'current': 'The current landway network, missing many connections.',
 		'current_all': 'The current and in progress landway network, with unprotected marked routes and planned routes.',
