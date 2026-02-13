@@ -15,25 +15,25 @@ html {
 	--color-tab-hover: #0b2f4c;
 	--color-tab-selected-indicator: #a1c6ed;
 	
+	--color-line-light-blue: #77aaff; /* Greenway/Minuteman */
 	--color-line-dark-orange: #ff6600; /* Powder House Blvd. & Broadway Somer. */
-	--color-line-purple: #650073; /* College Ave. Somerville */
-	--color-line-dark-green: #00782a; /* Fitchburg Cutoff/Alewife Linear Park/Somerville Community Path */
-	--color-line-tan: #cc9900; /* Summer St. Somerville */
 	--color-line-teal: #00cc99; /* Curtis/Holland/Elm/Beacon/Hampshire */
-	--color-line-lime-green: #aaee00; /* Somerville/Webster/Columbie/Sidney/Brookline */
-	--color-line-navy-blue: #003688; /* Kirkland/W. Washington/E. Somerville */
-	--color-line-pink: #ff33cc; /* River/Western/Prospect/E. Washington */
-	--color-line-dark-blue: #003abb; /* Huron/Cedar/Willow */
-	--color-line-brown: #663300; /* Ellery/Trowbridge/Park/Central */
+	--color-line-purple: #650073; /* College Ave. Somerville */
 	--color-line-dark-red: #b00000; /* GrJunct./Vassar/Galileo/McGrath */
 	--color-line-green: #00be12; /* Assembly */
 	--color-line-red: #ee0000; /* N. Mass. Ave./JFK */
-	--color-line-yellow: #f7dd11; /* Cambridge St. */
-	--color-line-indigo: #4800c2; /* Binney/First/Third */
+	--color-line-dark-green: #00782a; /* Fitchburg Cutoff/Alewife Linear Park/Somerville Community Path */
 	--color-line-light-purple: #ab7de2; /* Garden/Broadway Camb. */
+	--color-line-tan: #cc9900; /* Summer St. Somerville */
+	--color-line-lime-green: #aaee00; /* Somerville/Webster/Columbie/Sidney/Brookline */
+	--color-line-dark-blue: #003abb; /* Huron/Cedar/Willow */
+	--color-line-brown: #663300; /* Ellery/Trowbridge/Park/Central */
+	--color-line-navy-blue: #003688; /* Kirkland/W. Washington/E. Somerville */
+	--color-line-pink: #ff33cc; /* River/Western/Prospect/E. Washington */
+	--color-line-yellow: #f7dd11; /* Cambridge St. */
 	--color-line-light-orange: #ff9900; /* Brattle/E. Mass. Ave. */
+	--color-line-indigo: #4800c2; /* Binney/First/Third */
 	--color-line-blue: #006dff; /* Paul Dudley White */
-	--color-line-light-blue: #77aaff; /* Greenway/Minuteman */
 	--color-line-gray: #a0a5a9; /* Minor connections */
 	
 	--max-content-width: 75rem; /* 1200px default */
@@ -116,7 +116,70 @@ button[role="tab"] {
 	margin-block: 0;
 	padding: 0.25em 0.5em;
 	border-radius: 1em;
+	color: white;
 }
+	.line-light-blue { /* Greenway/Minuteman */
+		background-color: var(--color-line-light-blue);
+	}
+	.line-dark-orange { /* Powder House Blvd. & Broadway Somer. */
+		background-color: var(--color-line-dark-orange);
+	}
+	.line-teal { /* Curtis/Holland/Elm/Beacon/Hampshire */
+		background-color: var(--color-line-teal);
+	}
+	.line-purple { /* College Ave. Somerville */
+		background-color: var(--color-line-purple);
+	}
+	.line-dark-red { /* GrJunct./Vassar/Galileo/McGrath */
+		background-color: var(--color-line-dark-red);
+	}
+	.line-green { /* Assembly */
+		background-color: var(--color-line-green);
+	}
+	.line-red { /* N. Mass. Ave./JFK */
+		background-color: var(--color-line-red);
+	}
+	.line-dark-green { /* Fitchburg Cutoff/Alewife Linear Park/Somerville Community Path */
+		background-color: var(--color-line-dark-green);
+	}
+	.line-light-purple { /* Garden/Broadway Camb. */
+		background-color: var(--color-line-light-purple);
+	}
+	.line-tan { /* Summer St. Somerville */
+		background-color: var(--color-line-tan);
+	}
+	.line-lime-green { /* Somerville/Webster/Columbie/Sidney/Brookline */
+		background-color: var(--color-line-lime-green);
+		color: black;
+	}
+	.line-dark-blue { /* Huron/Cedar/Willow */
+		background-color: var(--color-line-dark-blue);
+	}
+	.line-brown { /* Ellery/Trowbridge/Park/Central */
+		background-color: var(--color-line-brown);
+	}
+	.line-navy-blue { /* Kirkland/W. Washington/E. Somerville */
+		background-color: var(--color-line-navy-blue);
+	}
+	.line-pink { /* River/Western/Prospect/E. Washington */
+		background-color: var(--color-line-pink);
+	}
+	.line-yellow { /* Cambridge St. */
+		background-color: var(--color-line-yellow);
+		color: black;
+	}
+	.line-light-orange { /* Brattle/E. Mass. Ave. */
+		background-color: var(--color-line-light-orange);
+	}
+	.line-indigo { /* Binney/First/Third */
+		background-color: var(--color-line-indigo);
+	}
+	.line-blue { /* Paul Dudley White */
+		background-color: var(--color-line-blue);
+	}
+	.line-gray { /* Minor connections */
+		background-color: var(--color-line-gray);
+	}
 
 /* -------- General page layout -------- */
 header,
